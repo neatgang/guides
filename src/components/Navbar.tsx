@@ -6,6 +6,7 @@ import { Button, buttonVariants } from './ui/Button'
 import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
 import { Box } from 'lucide-react'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/DropdownMenu'
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
@@ -17,9 +18,31 @@ const Navbar = async () => {
           <Box className='h-8 w-8 sm:h-6 sm:w-6' />
           <p className='hidden text-zinc-700 text-sm font-medium md:block'>Neat Guides</p>
         </Link>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <p className="text-zinc-700">Categories</p>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>
+              <Link href="/guides/dragonflight" className="text-zinc-700">
+                <p>Dragonflight</p>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/guides/classic-hardcore" className="text-zinc-700">
+                <p>Classic Hardcore</p>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/guides/wrath-classic" className="text-zinc-700">
+                <p>Wrath Classic</p>
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* search bar */}
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         {/* actions */}
         {/* <div className="flex"> */}
