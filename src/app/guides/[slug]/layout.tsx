@@ -72,7 +72,20 @@ const Layout = async ({
           <div className='overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
             <div className='px-6 py-4'>
               <p className='font-semibold py-3'>About {subreddit.name}</p>
+              {subreddit.creatorId === session?.user?.id ? (
+  <div className='flex justify-between gap-x-4 py-3'>
+    <Link
+      className={buttonVariants({
+        variant: 'outline',
+        className: 'w-full mb-6',
+      })}
+      href={`guides/${slug}/create`}>
+      Edit Category
+    </Link>
+  </div>
+) : null}
             </div>
+            
             <dl className='divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white'>
               <div className='flex justify-between gap-x-4 py-3'>
                 <dt className='text-gray-500'>Created</dt>

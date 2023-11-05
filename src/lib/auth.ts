@@ -3,6 +3,7 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { nanoid } from 'nanoid'
 import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
+import TwitchProvider from 'next-auth/providers/twitch'
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
@@ -16,6 +17,10 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+    TwitchProvider({
+      clientId: process.env.TWITCH_CLIENT_ID!,
+      clientSecret: process.env.TWITCH_CLIENT_SECRET!,
     }),
   ],
   callbacks: {

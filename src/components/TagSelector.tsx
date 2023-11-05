@@ -9,9 +9,9 @@ import { useState } from 'react';
 const TagComponent = () => {
 
     const tags = [
-        { id: '1', name: '' },
-        { id: '2', name: 'Tag 2' },
-        { id: '3', name: 'Tag 3' },
+        { id: '1', name: 'Dragonflight' },
+        // { id: '2', name: 'Tag 2' },
+        // { id: '3', name: 'Tag 3' },
         // Add more tags as needed
       ];
 
@@ -24,21 +24,25 @@ const TagComponent = () => {
   return (
     <Select>
       <SelectTrigger>
-        <input
-          type="text"
-          value={selectedTag}
-          onChange={handleTagChange}
-          placeholder="Select a tag"
-          className="w-full resize-none appearance-none overflow-hidden bg-transparent text-lg focus:outline-none"
-        />
+      <input
+  type="text"
+  value={selectedTag}
+  onChange={handleTagChange}
+  placeholder={selectedTag ? selectedTag : "Select a tag"}
+  className="w-full resize-none appearance-none overflow-hidden bg-transparent text-lg focus:outline-none"
+/>
       </SelectTrigger>
       <SelectContent>
         {/* Render the list of existing tags */}
         {tags.map((tag) => (
-          <SelectItem key={tag.id} value={tag.id}>
-            {tag.name}
-          </SelectItem>
-        ))}
+  <SelectItem 
+    key={tag.id} 
+    value={tag.id}
+    onClick={() => setSelectedTag(tag.name)}
+  >
+    {tag.name}
+  </SelectItem>
+))}
       </SelectContent>
     </Select>
   );

@@ -47,9 +47,8 @@ export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
       title,
       content,
       subredditId,
-      tags,
     }: PostCreationRequest) => {
-      const payload: PostCreationRequest = { title, content, subredditId, tags }
+      const payload: PostCreationRequest = { title, content, subredditId, tags: [] }
       const { data } = await axios.post('/api/subreddit/post/create', payload)
       return data
     },
@@ -174,7 +173,7 @@ export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
       title: data.title,
       content: blocks,
       subredditId,
-      tags: data.tags,
+      tags: [],
     }
 
     createPost(payload)

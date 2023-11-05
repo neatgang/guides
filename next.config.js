@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['uploadthing.com', 'lh3.googleusercontent.com'],
+    domains: [
+      "uploadthing.com",
+      "lh3.googleusercontent.com",
+      "static-cdn.jtvnw.net",
+    ],
   },
   experimental: {
-    appDir: true
-  }
-}
+    appDir: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
