@@ -20,6 +20,9 @@ const Navbar = async () => {
 
         {/* search bar */}
         {/* <SearchBar /> */}
+        <Link href="grouptools">
+          <Button variant="link">Group Tools</Button>
+        </Link>
         <Link href="categories">
           <Button variant="link">Categories</Button>
         </Link>

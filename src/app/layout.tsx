@@ -30,11 +30,12 @@ export default function RootLayout({
       <body className='pt-12'>
       {/* bg-slate-50 */}
         <Providers>
-          {/* @ts-expect-error Server Component */}
-          <Navbar />
+
+          {/* <Navbar /> */}
           {authModal}
 
-          <div className='container max-w-7xl mx-auto h-full pt-12'>
+          {/* <div className='container max-w-7xl mx-auto h-full pt-12'> */}
+          <div>
             {children}
           </div>
         </Providers>
