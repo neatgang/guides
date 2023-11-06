@@ -5,7 +5,7 @@ import { Icons } from './Icons'
 import { Button, buttonVariants } from './ui/Button'
 import { UserAccountNav } from './UserAccountNav'
 import SearchBar from './SearchBar'
-import { Box } from 'lucide-react'
+import { Box, GithubIcon } from 'lucide-react'
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
@@ -22,6 +22,9 @@ const Navbar = async () => {
         {/* <SearchBar /> */}
         <Link href="categories">
           <Button variant="link">Categories</Button>
+        </Link>
+        <Link href="https://github.com/neatgang/guides">
+          <GithubIcon />
         </Link>
         {/* actions */}
         {/* <div className="flex"> */}
