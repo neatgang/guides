@@ -23,13 +23,15 @@ const Navbar = async () => {
         <Link href="categories">
           <Button variant="link">Categories</Button>
         </Link>
-        <Link href="https://github.com/neatgang/guides">
-          <GithubIcon />
-        </Link>
         {/* actions */}
         {/* <div className="flex"> */}
         {session?.user ? (
-          <UserAccountNav user={session.user} />
+           <div className="flex items-center">
+           <UserAccountNav user={session.user}/>
+           <Link href="https://github.com/neatgang/guides" className="ml-4">
+             <GithubIcon />
+           </Link>
+         </div>
         ) : (
           <Link href='/sign-in' className={buttonVariants()}>
             Sign In
